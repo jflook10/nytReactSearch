@@ -3,6 +3,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
+var cors = require('cors')
 
 // Require History Schema
 var History = require("./models/History");
@@ -20,8 +21,10 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 app.use(express.static("./public"));
+app.use(cors());
 
 // -------------------------------------------------
+
 
 // MongoDB Configuration configuration (Change this URL to your own DB)
 
