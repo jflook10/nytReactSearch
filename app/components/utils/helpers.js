@@ -16,11 +16,17 @@ var helper = {
     var queryURL = "http://api.opencagedata.com/geocode/v1/json?query=" + location + "&pretty=1&key=" + geocodeAPI;
     return axios.get(queryURL).then(function(response) {
       // If get get a result, return that result's formatted address property
-      if (response.data.results[0]){
+      if (response.data.results[0] && response.data.results[5]){
+        for (var i = 0; i < 5; i++){
+          console.log("looping through results");
+          return response.data.results[i].formatted;
+        }
+      } else if (response.data.results[0]){
+        console.log("showing one result");
         return response.data.results[0].formatted;
-      }
-      // If we don't get any results, return an empty string
-      return "";
+      } else {
+        // If we don't get any results, return an empty string
+        return "";      }
     });
   },
 
@@ -31,7 +37,7 @@ var helper = {
 
   // This function posts new searches to our database.
   postHistory: function(location) {
-    return axios.post("/api", { location: location });
+    return axios.post("/api", { title: location });
   }
 };
 
