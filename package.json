@@ -1,7 +1,7 @@
 {
-  "name": "react-example",
+  "name": "nytreact",
   "version": "1.0.0",
-  "description": "",
+  "description": "React-based rendition of the New York Times Article Search application- create React components, work with helper functions, and utilize the React mounting lifecycle to query and display articles based on user searches. Use Node, Express and MongoDB",
   "main": "public/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -26,5 +26,13 @@
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "webpack": "^1.13.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jflook10/nytReactSearch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jflook10/nytReactSearch/issues"
+  },
+  "homepage": "https://github.com/jflook10/nytReactSearch#readme"
 }

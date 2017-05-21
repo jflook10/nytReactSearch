@@ -16,7 +16,7 @@ var helper = {
     var queryURL = "http://api.opencagedata.com/geocode/v1/json?query=" + location + "&pretty=1&key=" + geocodeAPI;
     return axios.get(queryURL).then(function(response) {
       // If get get a result, return that result's formatted address property
-      if (response.data.results[0] == true && response.data[5]) {
+      if (response.data.results[0]){
         return response.data.results[0].formatted;
       }
       // If we don't get any results, return an empty string

@@ -24,16 +24,24 @@ app.use(express.static("./public"));
 // -------------------------------------------------
 
 // MongoDB Configuration configuration (Change this URL to your own DB)
-mongoose.connect("mongodb://admin:codingrocks@ds023664.mlab.com:23664/reactlocate");
-var db = mongoose.connection;
 
-db.on("error", function(err) {
-  console.log("Mongoose Error: ", err);
-});
+var db = "mongodb://localhost/nytSearch";
 
-db.once("open", function() {
-  console.log("Mongoose connection successful.");
+mongoose.connect(db, function(err){
+
+  if(err){
+    console.log(err);
+  }else{
+    console.log("mongoose connection is successful!")
+  }
 });
+// db.on("error", function(err) {
+//   console.log("Mongoose Error: ", err);
+// });
+
+// db.once("open", function() {
+//   console.log("Mongoose connection successful.");
+// });
 
 // -------------------------------------------------
 
