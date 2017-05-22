@@ -15,9 +15,10 @@ var History = React.createClass({
         <div className="panel-body text-center">
 
           {/* Here we use a map function to loop through an array in JSX */}
-          {this.props.history.map(function(search, i) {
+          {this.props.history.map(function(blah, i) {
+           
             return (
-              <p key={i}>{search.title} - {search.date}</p>
+              <p key={i}>{blah.title} - {blah.date}</p>
             );
           })}
         </div>

@@ -24,7 +24,7 @@ var helper = {
       })
       // If get get a result, return that result's formatted address property
          if (response.data.response.docs) {
-        return response.data.results[0].formatted;
+        return response.data.response.docs;
       }
       // If we don't get any results, return an empty string
       return "";

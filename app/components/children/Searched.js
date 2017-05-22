@@ -15,7 +15,11 @@ var Results = React.createClass({
         </div>
         <div className="panel-body text-center">
           <h1>NYT Articles:</h1>
-          <p>{this.props.address}</p>
+             {this.props.address.map(function(search, i) {
+            return (
+              <p key={i}>{search.web_url}</p>
+            );
+          })}
         </div>
       </div>
     );

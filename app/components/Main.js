@@ -15,7 +15,7 @@ var Main = React.createClass({
   // Here we set a generic state associated with the number of clicks
   // Note how we added in this history state variable
   getInitialState: function() {
-    return { searchTerm: "", results: "", history: [] };
+    return { searchTerm: "", results: [], history: [] };
   },
 
   // The moment the page renders get the History
@@ -35,9 +35,10 @@ var Main = React.createClass({
 
     // Run the query for the address
     helpers.runQuery(this.state.searchTerm).then(function(data) {
+      console.log(data);
       if (data !== this.state.results) {
         console.log("Address", data);
-        this.setState({ results: data });
+        this.setState({results: data});
 
         // After we've received the result... then post the search term to our history.
         helpers.postHistory(this.state.searchTerm).then(function() {
